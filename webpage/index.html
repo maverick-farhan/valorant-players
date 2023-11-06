@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Valorant Player Card API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript" src="./index.js" defer></script>
+  </head>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html,body{
+  width:100%;
+  height:100%;
+  background-color:#ece8e1;
+  color:#ff4655;
+  font-family: 'Roboto', sans-serif;
+}
+header h1{
+  width:100%;
+  height:10vh;
+  font-style:oblique;
+  text-transform:uppercase;
+  font-size:5rem;
+  text-align:center;
+  margin-top:1rem;
+  margin-bottom:1rem;
+  letter-spacing:calc(-.11rem); 
+}
+
+.searchBox{
+  display:block;
+  position:relative;
+  display:flex;
+  width:40rem;
+  justify-content:center;
+  align-items:center;
+  left:50%;
+  top:3rem;
+  transform:translate(-50%);
+}
+.searchBox input{
+  all:unset;
+  border:1px solid #ff4655;
+  padding:1.3rem;
+  margin-top:2rem;
+  position:absolute;
+  width:40rem;
+  background-color:#eee;
+  border-radius:50px;
+  text-align:center;
+  color:#222;
+  font-size:2rem;
+}
+::placeholder{
+  font-size:1.2rem;
+  font-style:italic;
+}
+
+
+i.searchIcon{
+  position:absolute;
+  bottom:50%;
+  right:5%;
+  transform:translateY(110%);
+  cursor:pointer;
+  transition:.3s ease;
+  font-size:1.8rem;
+}
+
+i.searchIcon:hover{
+color:#111;
+}
+#card-wrapper{
+width:100%;
+height:100%;
+display:flex;
+padding:100px;
+justify-content:space-between;
+flex-wrap:wrap;
+align-items:center;
+}
+.cards{
+  max-width:50rem;
+  height:27rem;
+  margin:0 auto;
+  margin-top:30px;
+  border-radius:12px;
+  flex:0 1 calc(25% - 1em);
+  border:1px solid #ff2f40;
+  padding:10px;
+  cursor:pointer;
+  background-color:#ece8e1;
+  transition:.4s ease;
+  /* <!-- -webkit-user-select: none; -->
+  <!--       -webkit-touch-callout: none; -->
+  <!--       -moz-user-select: none; -->
+  <!--       -ms-user-select: none; -->
+  <!--       user-select: none; -->
+  <!----> */
+}
+img{
+  position:relative;
+  left:50%;
+  margin-top:1rem;
+  transform:translateX(-50%);
+}
+div.info{
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
+  color:#222;
+}
+div.info h4{
+  padding:.31rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  color: #ff4655;
+  font-size:1.02rem;
+}
+div.info h4 span{
+  font-size:1.2rem;
+  color:#222;
+}
+span.name{
+text-align:center;
+font-size:2rem;
+}
+h4.crosshair pre.code{
+  color:#222;
+  width:30rem;
+  overflow-x:scroll;
+  text-align:center;
+  padding:14px;
+  white-space:pre-wrap;
+  text-wrap:wrap;
+  cursor:text;
+  -webkit-user-select: all;
+        -webkit-touch-callout:all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
+}
+.hide{
+  display:none;
+}
+
+  </style>
+
+  <body>
+
+<header>
+  <h1 class="title">Valorant Players</h1>
+</header>
+
+<div class="searchBox">
+  <input id="search" onchange="searchHandle()" type="search" name="search" placeholder="Enter Player Name" />
+  <!-- <i class="fa-solid fa-magnifying-glass searchIcon"></i> -->
+</div>
+
+<div id="card-wrapper">
+
+</div>
+  </body>
+</html>
