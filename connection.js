@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const config = ()=>{
-mongoose.connect(`mongodb://127.0.0.1:27017/valorant`)
+mongoose.connect(`mongodb+srv://valorantAPI:valorantAPI@cluster0.tbrppdl.mongodb.net/?retryWrites=true&w=majority`)
 .then(()=>{
     console.log('Connected!')
 })
